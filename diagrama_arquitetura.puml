@@ -1,0 +1,107 @@
+@startuml ProjetoAcervoDigital
+skinparam backgroundColor #FAFAFA
+skinparam component {
+    BackgroundColor #FF6B6B
+    BorderColor #333
+    ArrowColor #333
+    FontColor white
+}
+
+title Projeto Acervo Digital ReactJS - Peças do Quebra-Cabeça
+
+package "Camada de Apresentacao (UI)" #FFE6E6 {
+    component [NavBar] as navbar
+    component [Login] as login
+    component [FirstAccess] as firstaccess
+    component [Teste] as teste
+}
+
+package "Roteamento e Navegacao" #E0F7F6 {
+    component [React Router] as router
+}
+
+package "Gerenciamento de Estado" #E0F7F6 {
+    component [AuthContext] as authcontext
+    component [Hooks] as hooks
+}
+
+package "Servicos e Logica" #E6F8F5 {
+    component [API Service] as api
+    component [Storage Service] as storage
+}
+
+package "Nucleo da Aplicacao" #E0F7F6 {
+    component [React] as react
+    component [React DOM] as reactdom
+}
+
+package "Ativos Estaticos" #F0F0F0 {
+    component [CSS] as css
+    component [HTML] as html
+    component [Assets] as assets
+}
+
+package "Testes e Qualidade" #FFFEF0 {
+    component [Jest] as jest
+    component [Testing Library] as testlib
+    component [Web Vitals] as vitals
+}
+
+package "Ferramentas de Build" #F0F8FF {
+    component [Webpack] as webpack
+    component [Babel] as babel
+    component [ESLint] as eslint
+}
+
+package "Ambiente de Execucao" #F0F8FF {
+    component [Node.js] as nodejs
+    component [Browser] as browser
+}
+
+navbar --> router
+login --> authcontext
+firstaccess --> authcontext
+
+router --> react
+
+authcontext --> hooks
+authcontext --> api
+
+api --> storage
+api --> nodejs
+
+react --> reactdom
+reactdom --> html
+reactdom --> css
+reactdom --> browser
+
+navbar --> assets
+login --> assets
+
+testlib --> jest
+vitals --> jest
+jest --> nodejs
+
+webpack --> babel
+babel --> nodejs
+eslint --> nodejs
+webpack --> browser
+
+nodejs --> browser
+
+note right of react
+  Peca Principal
+  Tudo se conecta aqui!
+end note
+
+note bottom of storage
+  Dados Persistidos
+  Mantem estado
+end note
+
+note left of jest
+  Garantia de Qualidade
+  Valida as pecas
+end note
+
+@enduml

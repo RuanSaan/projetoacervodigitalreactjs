@@ -1,0 +1,139 @@
+@startuml ProjetoAcervoDigitalComArquivos
+skinparam backgroundColor #FAFAFA
+skinparam component {
+    BackgroundColor #FF6B6B
+    BorderColor #333
+    ArrowColor #333
+    FontColor white
+}
+
+title Projeto Acervo Digital ReactJS - Arquitetura com Arquivos do Projeto
+
+package "== PECA 1: Nucleo da Aplicacao ==" #FF6B6B {
+    package "Nucleo" #E0F7F6 {
+        component [src/index.js] as index
+        component [src/App.js] as app
+        note bottom of index
+        Ponto de entrada
+        end note
+    }
+}
+
+package "== PECA 2: Roteamento e Navegacao ==" #4ECDC4 {
+    package "Roteamento" #E0F7F6 {
+        component [src/routes.jsx] as routes
+        note bottom of routes
+        Definicoes de rotas
+        /login, /first-access
+        end note
+    }
+}
+
+package "== PECA 3: Camada de Apresentacao (UI) ==" #95E1D3 {
+    package "Componentes" #FFE6E6 {
+        component [src/componentes/NavBar.jsx] as navbar
+        component [src/componentes/Teste.js] as teste
+    }
+
+    package "Paginas" #FFE6E6 {
+        component [src/pages/Login.jsx] as login
+        component [src/pages/FirstAccess.jsx] as firstaccess
+    }
+
+    package "Estilos UI" #F0F0F0 {
+        component [src/App.css] as appcss
+        component [src/index.css] as indexcss
+    }
+}
+
+package "== PECA 4: Gerenciamento de Estado ==" #FFE66D {
+    package "Context API" #E0F7F6 {
+        component [src/contexts/AuthContext.jsx] as authcontext
+        note bottom of authcontext
+        Hooks customizados
+        useAuth()
+        end note
+    }
+}
+
+package "== PECA 5: Servicos e Logica ==" #A8E6CF {
+    package "Servicos" #E6F8F5 {
+        component [src/services/api.js] as api
+        note bottom of api
+        autenticar()
+        alterarSenha()
+        end note
+
+        component [src/services/storage.js] as storage
+        note bottom of storage
+        db.get()
+        db.set()
+        end note
+    }
+}
+
+package "== PECA 6: Ferramentas, Build e Ativos ==" #C7CEEA {
+    package "Testes" #FFFEF0 {
+        component [src/setupTests.js] as setup
+        component [src/reportWebVitals.js] as vitals
+    }
+
+    package "Ativos Estaticos" #F0F0F0 {
+        component [public/index.html] as indexhtml
+        component [public/manifest.json] as manifest
+        component [public/favicon.ico] as favicon
+    }
+
+    package "Configuracao e Build" #F0F8FF {
+        component [package.json] as packagejson
+        component [build/] as builddir
+        component [node_modules/] as nodemodules
+    }
+
+    package "Controle de Versao" #F0F8FF {
+        component [.gitignore] as gitignore
+    }
+}
+
+index --> app
+app --> routes
+routes --> navbar
+app --> login
+app --> firstaccess
+navbar --> authcontext
+login --> authcontext
+firstaccess --> authcontext
+
+authcontext --> api
+api --> storage
+
+navbar --> appcss
+navbar --> indexcss
+login --> appcss
+
+setup --> vitals
+packagejson --> nodemodules
+packagejson --> builddir
+
+indexhtml --> indexcss
+
+note right of index
+  PECA 1: Principal
+  Entrada do App
+end note
+
+note bottom of storage
+  PECA 5: Logica
+  Dados persistidos
+end note
+
+note left of setup
+  PECA 6: Qualidade
+  Testes e Build
+end note
+
+note top of gitignore
+  Rastreia arquivos
+end note
+
+@enduml

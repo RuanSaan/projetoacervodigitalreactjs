@@ -1,0 +1,28 @@
+@startuml QuebracabecaProjetoAcervoDigital
+skinparam backgroundColor #F5F5F5
+
+rectangle "PECA 1\nReact + React DOM\n(Nucleo)" as p1 #FF6B6B
+
+rectangle "PECA 2\nReact Router\n(Navegacao)" as p2 #4ECDC4
+
+rectangle "PECA 3\nComponentes\n(Interface)" as p3 #95E1D3
+
+rectangle "PECA 4\nAuthContext\n(Estado Global)" as p4 #FFE66D
+
+rectangle "PECA 5\nServicos\n(Logica)" as p5 #A8E6CF
+
+rectangle "PECA 6\nFerramentas\n(Infraestrutura)" as p6 #C7CEEA
+
+p1 --> p2 : encaixa com
+p2 --> p3 : ativa
+p3 --> p4 : usa
+p4 --> p5 : chama
+p5 --> p1 : alimenta
+
+p6 -.-> p1 : compila
+
+note right of p1
+React eh a peca central!
+end note
+
+@enduml
