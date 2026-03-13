@@ -2,7 +2,11 @@
   text-align: center;
 }
 .nav{
-  display:flex;  gap:.5rem;  padding:1rem;  background:#fff;  border-bottom:1px solid #e2e8f0
+  display:flex; /* Define o layout como flexível, permitindo que os itens dentro da barra de navegação sejam organizados de forma flexível e responsiva.*/
+  gap:.5rem;  /* Adiciona um espaçamento de 0.5rem entre os itens dentro da barra de navegação, melhorando a legibilidade e a estética visual. */
+  padding:1rem;  /* Adiciona um espaçamento interno de 1rem em torno do conteúdo da barra de navegação, proporcionando um layout mais agradável e organizado. */
+  background:#fff; /* Define a cor de fundo da barra de navegação como branco, criando um contraste visual com o conteúdo e melhorando a legibilidade. */ 
+  border-bottom:1px solid #e2e8f0 /* Adiciona uma borda inferior de 1 pixel com a cor #e2e8f0, criando uma separação visual entre a barra de navegação e o restante do conteúdo da página, melhorando a estrutura visual e a organização. */
 }
 /* A classe .container é necessária para estilizar o contêiner principal da página, proporcionando uma aparência agradável e organizada para o conteúdo. 
 Ela define a largura máxima do contêiner, centraliza-o na página, adiciona espaçamento interno, um fundo branco, bordas arredondadas e uma sombra sutil para destacar o conteúdo. 
