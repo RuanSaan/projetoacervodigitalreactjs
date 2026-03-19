@@ -3,7 +3,8 @@
 Não se esqueça que o seu Mapa no React também precisa de pacotes específicos para desenhar o Brasil na tela. Caso ainda não tenha instalado na raiz do projeto (ou na pasta do front), execute:
 
 Bash
-npm install react-leaflet leaflet react-router-dom
+cd backend
+  npm install react-leaflet leaflet react-router-dom
 */
 import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Tooltip } from 'react-leaflet';

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '../../infra/supabase/supabaseClient'
-
+// REACT_APP_SUPABASE_ANON_KEY
+// REACT_APP_SUPABASE_URL
 function Estado() {
     
   console.log("URL do Supabase:", process.env.REACT_APP_SUPABASE_URL);
