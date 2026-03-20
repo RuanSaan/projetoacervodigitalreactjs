@@ -1,0 +1,188 @@
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    font-family: 'Segoe UI', sans-serif;
+    color: #1f2937;
+}
+
+.required {
+    color: #e11d48;
+    font-weight: bold;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    font-weight: 600;
+}
+
+.input, .select, .textarea {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.tip {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+}
+
+/* Alinhamento organizado à esquerda para Radio e Checkbox */
+.radioGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    padding-left: 0.5rem;    /* Pequeno recuo para não colar na borda, se desejar */
+    width: 100%;             /* Ocupa a largura total do container */
+}
+/* Ajuste opcional para o input de checkbox */
+.option input[type="radio"] {
+    margin: 0;               /* Remove margens padrão do navegador que causam desalinhamento */
+    cursor: pointer;
+    width: 18px;             /* Tamanho fixo para padronização */
+    height: 18px;
+}
+
+/* --- AJUSTE SOLICITADO AQUI --- */
+.checkboxGroup {
+    display: flex;
+    flex-direction: column; /* Garante que fiquem um embaixo do outro */
+    align-items: flex-start; /* Alinha todos os itens estritamente à esquerda */
+    gap: 1rem;             /* Espaçamento vertical entre as opções */
+    margin-top: 1rem;
+    padding-left: 0.5rem;    /* Pequeno recuo para não colar na borda, se desejar */
+    width: 100%;             /* Ocupa a largura total do container */
+}
+
+
+/* Ajuste opcional para o input de checkbox */
+.option input[type="checkbox"] {
+    margin: 0;               /* Remove margens padrão do navegador que causam desalinhamento */
+    cursor: pointer;
+    width: 18px;             /* Tamanho fixo para padronização */
+    height: 18px;
+}
+
+.fileInputContainer {
+    border: 2px dashed #d1d5db;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    background: #f9fafb;
+}
+
+.buttonNext {
+    background: #003a8f;
+    color: white;
+    padding: 0.8rem 2.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    float: right;
+    transition: 0.2s;
+}
+
+.buttonNext:hover {
+    background: #002c6d;
+}
+
+.summaryTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.summaryTable td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.summaryTable td:first-child {
+    font-weight: 600;
+    width: 40%;
+    color: #4b5563;
+}
+
+/*
+barra de progresso
+*/
+
+/* Container da Barra de Progresso */
+.progressContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+/* Linha de fundo da barra */
+.progressContainer::before {
+    content: "";
+    background-color: #e5e7eb;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Estilo de cada círculo/etapa */
+.step {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 3px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    font-weight: bold;
+    color: #9ca3af;
+    transition: 0.3s;
+}
+
+/* Etapa Ativa */
+.stepActive {
+    border-color: #003a8f;
+    color: #003a8f;
+    background-color: #f0f7ff;
+}
+
+/* Etapa Concluída */
+.stepCompleted {
+    background-color: #003a8f;
+    border-color: #003a8f;
+    color: white;
+}
+
+/* Texto descritivo abaixo da etapa */
+.stepLabel {
+    position: absolute;
+    top: 40px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
