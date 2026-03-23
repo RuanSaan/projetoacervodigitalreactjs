@@ -10,7 +10,6 @@ import App from './App';
 import FirstAccess from './pages/FirstAccess';
 import SubmitWork from './pages/cadastrarformulario/SubmitWork';
 import ReviewQueue from './pages/ReviewQueue';
-import Dashboard from './pages/Dashboard';
 import Faculties from './pages/admin/Faculties';
 import Estado from './pages/admin/Estado'; // Utiliza o supabase para obter os dados do estado do sistema
 import MapPage from './mapabrasil/MapPage';
@@ -22,6 +21,7 @@ import SubmitWorkTela03 from './pages/cadastrarformulario/SubmitWorkTela03';
 import CertificateContainer from './pages/certificado/CertificateContainer';
 import MapaUnidadesFaculdade from './unidadesfaculdade/MapaUnidadesFaculdade';
 import ConsultaUnidade from './unidadesfaculdade/ConsultaUnidade';
+import Dashboard from './pages/dashboard/Dashboard';
 
 // Definição das rotas da aplicação utilizando createBrowserRouter.
 // A rota '/login' renderiza o componente Login, que é a página de login da aplicação.
