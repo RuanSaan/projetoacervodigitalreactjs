@@ -12,7 +12,7 @@ export default function NavBar(){
       
       <NavLink to="/unidadesfaculdade">Unidades Estácio</NavLink>
 
-      <NavLink to="/mapabrasil">Mapa Hard Rock</NavLink>
+      {/* <NavLink to="/mapabrasil">Mapa Hard Rock</NavLink> */}
       <NavLink to="/mapabrasilbd">Mapa Hard Rock Banco de Dados</NavLink>
       
       <NavLink to="/admin/faculties">Estrutura</NavLink>
